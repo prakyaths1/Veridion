@@ -1,0 +1,72 @@
+[
+  {
+    "id": "crypto-email-001",
+    "sourceType": "email",
+    "category": "Cryptocurrency Scam",
+    "text": "Coinbase Security Notice: Unrecognized login attempt from Russia. Your crypto assets are temporarily locked. Re-verify your secret seed phrase at https://coinbase-auth-verify.com/seed to regain access.",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Crypto exchange seed phrase harvesting attack.",
+    "datasetName": "Crypto Scam DB Archive",
+    "datasetSource": "Open Crypto Security Corpus",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "crypto-email-002",
+    "sourceType": "email",
+    "category": "Cryptocurrency Scam",
+    "text": "Trust Wallet Airdrop: Claim your 500 TWT tokens today! Connect your wallet and enter your recovery phrase at https://trustwallet-airdrop-claim.com",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Fake token airdrop targeting recovery phrase.",
+    "datasetName": "Crypto Scam DB Archive",
+    "datasetSource": "Open Crypto Security Corpus",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "crypto-email-003",
+    "sourceType": "email",
+    "category": "Cryptocurrency Scam",
+    "text": "Guaranteed 200% Daily Returns in Bitcoin Trading! Deposit 0.05 BTC to our automated AI arbitrage bot. Instant withdrawals anytime.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "scam",
+    "explanation": "High-yield investment program (HYIP) Ponzi scheme lure.",
+    "datasetName": "FTC Crypto Fraud Alerts",
+    "datasetSource": "Federal Trade Commission",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "crypto-email-004",
+    "sourceType": "email",
+    "category": "Cryptocurrency Scam",
+    "text": "Ledger Live Security Update: Mandatory firmware update required to prevent asset loss. Connect hardware wallet and seed phrase at https://ledger-live-update.com",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Hardware wallet phishing targeting seed recovery phrase.",
+    "datasetName": "Crypto Scam DB Archive",
+    "datasetSource": "Open Crypto Security Corpus",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "crypto-email-005",
+    "sourceType": "email",
+    "category": "Cryptocurrency Scam",
+    "text": "Solana Phantom Alert: Unauthorized transaction of 45 SOL detected. Reverse transaction immediately at https://phantom-wallet-secure.com",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Phantom wallet authorization threat link.",
+    "datasetName": "Crypto Scam DB Archive",
+    "datasetSource": "Open Crypto Security Corpus",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  }
+]

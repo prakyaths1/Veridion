@@ -1,0 +1,535 @@
+{
+  "total": 81,
+  "truePositives": 30,
+  "falsePositives": 0,
+  "trueNegatives": 47,
+  "falseNegatives": 4,
+  "accuracy": 0.951,
+  "precision": 1,
+  "recall": 0.882,
+  "f1Score": 0.938,
+  "falsePositiveRate": 0,
+  "falseNegativeRate": 0.118,
+  "confusionMatrix": {
+    "Very Low": {
+      "Very Low": 47,
+      "Low": 0,
+      "Moderate": 0,
+      "High": 0,
+      "Critical": 0
+    },
+    "Low": {
+      "Very Low": 0,
+      "Low": 0,
+      "Moderate": 0,
+      "High": 0,
+      "Critical": 0
+    },
+    "Moderate": {
+      "Very Low": 0,
+      "Low": 0,
+      "Moderate": 0,
+      "High": 0,
+      "Critical": 0
+    },
+    "High": {
+      "Very Low": 2,
+      "Low": 2,
+      "Moderate": 9,
+      "High": 9,
+      "Critical": 4
+    },
+    "Critical": {
+      "Very Low": 0,
+      "Low": 0,
+      "Moderate": 0,
+      "High": 4,
+      "Critical": 4
+    }
+  },
+  "categoryMetrics": {
+    "Brand Impersonation / Credential Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Delivery Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank Phishing": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Advance Fee / 419 Scam": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Government Impersonation": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Romance / Wire Fraud": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Subscription Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Lottery / Prize Scam": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Tech Account Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Business Email Compromise / CEO Fraud": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Invoice Fraud / BEC": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0
+    },
+    "Account Security Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Delivery / Customs Fee Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Job / Check Fraud": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0
+    },
+    "Financial Account Phishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Gift Card Scam": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Wrong Number / Pig Butchering": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Delivery Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Government Impersonation Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Prize / Lottery Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank Card Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Order Confirmation Smishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Phishing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank Phishing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Brand Phishing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "IP Address Phishing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Typosquatting / Homoglyph URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Brand Keyword Stuffing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Delivery Phishing URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Educational / Routine Email": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Order Confirmation": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Communication": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Bank Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Security Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Payment Confirmation": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Professional Follow-up Email": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Newsletter": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Delivery Confirmation": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Reminder": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Payroll Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Personal / Family Email": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Sign-in Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Document Sharing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Healthcare Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Appointment Reminder": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Family / Personal SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Ride Service Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "2FA / Verification Code": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Delivery SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Social / Friend SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Bank SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Family SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Service URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate OAuth URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Shopping URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Developer URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Educational URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Government URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Productivity URL": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Short Message Edge Case": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Brand in Safe Context": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Bank Name in Safe Context": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Normal Urgency in Educational Context": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Normal Urgency in Workplace Context": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Refund Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Invoice Email": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Delivery Status": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Bank Statement": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Login Notification": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Legitimate Password Change Confirmation": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank Fraud Alert Smishing": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0
+    },
+    "Tech Support Scam": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0
+    },
+    "Job Scam SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Agile Communication": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Personal / Social Email": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Healthcare SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Personal SMS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    }
+  },
+  "calibrationBuckets": {
+    "80-84%": {
+      "total": 9,
+      "correct": 7,
+      "avgConfidence": 79.4,
+      "actualAccuracy": 78
+    },
+    "85-89%": {
+      "total": 26,
+      "correct": 24,
+      "avgConfidence": 88.1,
+      "actualAccuracy": 92
+    },
+    "90-94%": {
+      "total": 43,
+      "correct": 43,
+      "avgConfidence": 92.7,
+      "actualAccuracy": 100
+    },
+    "95-99%": {
+      "total": 3,
+      "correct": 3,
+      "avgConfidence": 95,
+      "actualAccuracy": 100
+    }
+  },
+  "misclassifications": [
+    {
+      "id": "email-phish-011",
+      "text": "Invoice #4821 attached. Please review and wire payment of $12,500 to the updated bank account by end of business today. Account details: Chase routing 021000021.",
+      "category": "Invoice Fraud / BEC",
+      "expectedRisk": "High",
+      "actualRisk": "Very Low",
+      "expectedIsScam": true,
+      "actualIsScam": false,
+      "scamProbability": 0,
+      "confidence": 75,
+      "redFlags": [
+        "The message actively asks you to provide sensitive credentials (password, PIN, SSN, verification code, or financial details). Legitimate companies already have your account information — they do not need you to \"verify\" or \"confirm\" it through unsolicited messages. This is one of the strongest indicators of a phishing attempt.",
+        "The message uses time-pressure language alongside a request that could be suspicious. Even mild urgency (\"today\", \"immediately\") becomes a risk signal when paired with requests for credentials, payments, or account actions."
+      ],
+      "trustSignals": [
+        "The message uses professional workplace language (\"team update\", \"agenda\", \"meeting\", \"review\") without requesting credentials, payments, or urgent action — consistent with routine business communication that poses no threat.",
+        "The message contains standard transactional language (\"has shipped\", \"order confirmed\", \"tracking info\") that is typical of legitimate order and shipping notifications. No suspicious links or credential requests are present."
+      ]
+    },
+    {
+      "id": "email-phish-014",
+      "text": "We are hiring remote workers for data entry tasks. Earn $5,000 per week working 2 hours a day. We will send you a cashier check to buy home office equipment. Reply now to start.",
+      "category": "Fake Job / Check Fraud",
+      "expectedRisk": "High",
+      "actualRisk": "Low",
+      "expectedIsScam": true,
+      "actualIsScam": false,
+      "scamProbability": 15,
+      "confidence": 75,
+      "redFlags": [
+        "The message combines a too-good-to-be-true job offer with a check-sending scheme. This is a classic fake-check fraud: you receive a fraudulent cashier's check, deposit it, and are asked to forward part of the funds. When the check bounces days later, you owe the bank the full amount. These scams target job seekers and students."
+      ],
+      "trustSignals": [
+        "The message uses professional workplace language (\"team update\", \"agenda\", \"meeting\", \"review\") without requesting credentials, payments, or urgent action — consistent with routine business communication that poses no threat."
+      ]
+    },
+    {
+      "id": "sms-phish-009",
+      "text": "Capital One fraud alert: Unauthorized purchase of $342.99 at Best Buy. If this wasn't you, verify now at http://capitalone-fraud-verify.com",
+      "category": "Bank Fraud Alert Smishing",
+      "expectedRisk": "High",
+      "actualRisk": "Very Low",
+      "expectedIsScam": true,
+      "actualIsScam": false,
+      "scamProbability": 0,
+      "confidence": 88,
+      "redFlags": [],
+      "trustSignals": []
+    },
+    {
+      "id": "email-phish-017",
+      "text": "Microsoft Support: Your computer has been infected with a critical virus. Call 1-800-555-0199 immediately or your files will be permanently deleted.",
+      "category": "Tech Support Scam",
+      "expectedRisk": "High",
+      "actualRisk": "Low",
+      "expectedIsScam": true,
+      "actualIsScam": false,
+      "scamProbability": 16,
+      "confidence": 89,
+      "redFlags": [
+        "The message references microsoft with urgent language. Scammers exploit brand trust to create false urgency. However, urgency alone with a brand name is only a moderate signal — some legitimate notifications (shipping deadlines, payment reminders) also use time pressure.",
+        "The message uses mild time-pressure language. This is common in both legitimate and scam communications. On its own, urgency is a weak signal — it becomes more concerning when combined with requests for sensitive information or suspicious links."
+      ],
+      "trustSignals": []
+    }
+  ]
+}

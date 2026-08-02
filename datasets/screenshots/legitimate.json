@@ -1,0 +1,72 @@
+[
+  {
+    "id": "screenshot-legit-001",
+    "sourceType": "screenshot",
+    "category": "Legitimate Order Confirmation",
+    "text": "Screenshot text: Order Confirmed #94821 - Amazon.com. Item: Logitech Wireless Keyboard. Total: $39.99. Estimated delivery: Tomorrow by 8 PM.",
+    "expectedRisk": "Very Low",
+    "expectedIsScam": false,
+    "groundTruthLabel": "legitimate",
+    "explanation": "OCR text from Amazon order confirmation screenshot.",
+    "datasetName": "Veridion Visual OCR Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  },
+  {
+    "id": "screenshot-legit-002",
+    "sourceType": "screenshot",
+    "category": "Legitimate Bank Notification",
+    "text": "Screenshot text: Chase Mobile Alert. You spent $45.20 at Trader Joe's on 10/12. Balance remaining: $2,840.10. Reply STOP to opt out.",
+    "expectedRisk": "Very Low",
+    "expectedIsScam": false,
+    "groundTruthLabel": "legitimate",
+    "explanation": "OCR text from mobile banking push alert screenshot.",
+    "datasetName": "Veridion Visual OCR Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  },
+  {
+    "id": "screenshot-legit-003",
+    "sourceType": "screenshot",
+    "category": "Healthcare",
+    "text": "Screenshot text: MyChart Patient Portal. Appointment Confirmed with Dr. Miller on Friday, Oct 14 at 10:30 AM. Location: Suite 400 Medical Center.",
+    "expectedRisk": "Very Low",
+    "expectedIsScam": false,
+    "groundTruthLabel": "legitimate",
+    "explanation": "OCR text from patient portal appointment screen.",
+    "datasetName": "Veridion Visual OCR Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  },
+  {
+    "id": "screenshot-legit-004",
+    "sourceType": "screenshot",
+    "category": "Workplace Communication",
+    "text": "Screenshot text: Slack message from Sarah: Hey team, please remember to update your JIRA tickets before the end of sprint today. Thanks!",
+    "expectedRisk": "Very Low",
+    "expectedIsScam": false,
+    "groundTruthLabel": "legitimate",
+    "explanation": "OCR text from workplace Slack channel screenshot.",
+    "datasetName": "Veridion Visual OCR Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  },
+  {
+    "id": "screenshot-legit-005",
+    "sourceType": "screenshot",
+    "category": "Legitimate Security Notification",
+    "text": "Screenshot text: Google Security Checkup. Your account is protected. 0 security recommendations. Last checked today at 11:15 AM.",
+    "expectedRisk": "Very Low",
+    "expectedIsScam": false,
+    "groundTruthLabel": "legitimate",
+    "explanation": "OCR text from Google Security Checkup screen.",
+    "datasetName": "Veridion Visual OCR Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  }
+]

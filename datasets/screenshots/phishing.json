@@ -1,0 +1,72 @@
+[
+  {
+    "id": "screenshot-phish-001",
+    "sourceType": "screenshot",
+    "category": "QR Code Scam / Quishing",
+    "text": "Screenshot text: Urgent Security Notice! Scan the QR code below to re-verify your bank account or funds will be locked immediately.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "OCR text from malicious flyer/email image with QR code scam lure.",
+    "datasetName": "Veridion Visual Threat Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  },
+  {
+    "id": "screenshot-phish-002",
+    "sourceType": "screenshot",
+    "category": "Tech Support Scam",
+    "text": "Screenshot text: SYSTEM ERROR #0x88921! Windows Defender Alert: Your PC is infected with Trojan Spyware. Call Support at 1-800-555-0199 immediately. Do not close this window.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "OCR text from browser pop-up tech support virus alert.",
+    "datasetName": "FTC Tech Support Alert Corpus",
+    "datasetSource": "Federal Trade Commission",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "screenshot-phish-003",
+    "sourceType": "screenshot",
+    "category": "Delivery Scam Screenshot",
+    "text": "Screenshot text: SMS Image - USPS Alert: Your parcel is on hold due to missing house number. Click http://usps-redelivery-track.com/verify to enter address.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "OCR text from screenshot of a USPS smishing text message.",
+    "datasetName": "APWG Smishing Archive",
+    "datasetSource": "Anti-Phishing Working Group",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "screenshot-phish-004",
+    "sourceType": "screenshot",
+    "category": "Cryptocurrency Scam Screenshot",
+    "text": "Screenshot text: Elon Musk Giveaway: Send 0.5 ETH to the address below and get 1.0 ETH back instantly! Scan QR code or copy address: 0x71C...82A.",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "scam",
+    "explanation": "OCR text from YouTube livestream fake crypto giveaway screenshot.",
+    "datasetName": "Crypto Scam DB Archive",
+    "datasetSource": "Open Crypto Security Corpus",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "screenshot-phish-005",
+    "sourceType": "screenshot",
+    "category": "Bank Phishing Screenshot",
+    "text": "Screenshot text: Security Alert - Your Wells Fargo Online Banking session has been suspended. Please confirm your 16-digit card number and PIN to unblock access.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "OCR text from fake bank login web page screenshot harvesting card PIN.",
+    "datasetName": "Veridion Visual Threat Dataset",
+    "datasetSource": "Veridion Curated Suite",
+    "datasetType": "Curated Test Cases",
+    "license": "MIT"
+  }
+]

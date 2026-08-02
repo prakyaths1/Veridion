@@ -1,0 +1,72 @@
+[
+  {
+    "id": "gov-email-001",
+    "sourceType": "email",
+    "category": "Government Impersonation",
+    "text": "Internal Revenue Service: Tax Audit Notice #IRS-9028. Failure to pay outstanding tax balance of $2,450 within 48 hours will result in asset seizure and criminal prosecution. Pay via wire transfer.",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "IRS legal threat demanding wire payment.",
+    "datasetName": "IRS Tax Scam Alerts",
+    "datasetSource": "Internal Revenue Service",
+    "datasetType": "Public Dataset",
+    "license": "Public Domain"
+  },
+  {
+    "id": "gov-email-002",
+    "sourceType": "email",
+    "category": "Government Impersonation",
+    "text": "Federal Bureau of Investigation: Notice of Active Warrant. A federal warrant has been issued in your name for wire fraud. Contact Agent Miller immediately at 1-800-555-0199 or reply with SSN.",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "FBI warrant threat requesting SSN over email/phone.",
+    "datasetName": "FTC Fraud Alert Archive",
+    "datasetSource": "Federal Trade Commission",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "gov-email-003",
+    "sourceType": "email",
+    "category": "Government Impersonation",
+    "text": "Department of Motor Vehicles: Your driver's license has been suspended due to unpaid toll fees. Pay $5.50 toll balance at https://dmv-toll-pay.com/verify to avoid license revocation.",
+    "expectedRisk": "High",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Fake DMV toll collection scam (smishing/phishing crossover).",
+    "datasetName": "APWG Phishing Archive",
+    "datasetSource": "Anti-Phishing Working Group",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  },
+  {
+    "id": "gov-email-004",
+    "sourceType": "email",
+    "category": "Government Impersonation",
+    "text": "Social Security Administration: Your monthly benefit check is on hold due to missing address verification. Update SSN and address at https://ssa-benefit-update.com",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "SSA benefit hold lure harvesting SSN and address.",
+    "datasetName": "SSA Fraud Alert Archive",
+    "datasetSource": "Social Security Administration",
+    "datasetType": "Public Dataset",
+    "license": "Public Domain"
+  },
+  {
+    "id": "gov-email-005",
+    "sourceType": "email",
+    "category": "Government Impersonation",
+    "text": "US Customs and Border Protection: Package seized at international border containing illegal contraband. Pay $450 customs clearance fee via Western Union or face criminal investigation.",
+    "expectedRisk": "Critical",
+    "expectedIsScam": true,
+    "groundTruthLabel": "phishing",
+    "explanation": "Customs contraband threat demanding Western Union payment.",
+    "datasetName": "IC3 Public Advisories",
+    "datasetSource": "FBI IC3",
+    "datasetType": "Public Dataset",
+    "license": "Public Data"
+  }
+]

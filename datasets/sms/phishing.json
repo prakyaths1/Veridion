@@ -1,0 +1,112 @@
+[
+  {
+    "id": "sms-phish-001",
+    "label": "Wrong number romance lure",
+    "category": "Wrong number",
+    "text": "Hey, this is not a wrong number. Let's be friends and talk on WhatsApp, I can help you invest in crypto.",
+    "expectedRisk": "High",
+    "expectedProbability": 66,
+    "expectedConfidence": 85,
+    "redFlags": ["Wrong number setup", "Crypto investment bait"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-002",
+    "label": "Gift card refund scam",
+    "category": "Gift card",
+    "text": "We need a gift card code immediately to process your refund today.",
+    "expectedRisk": "Critical",
+    "expectedProbability": 85,
+    "expectedConfidence": 90,
+    "redFlags": ["Gift card request", "Urgent financial pressure"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-003",
+    "label": "USPS delivery smishing",
+    "category": "Delivery",
+    "text": "USPS: Your package could not be delivered. Confirm your address at https://usps-delivery-update.com/confirm to reschedule delivery.",
+    "expectedRisk": "High",
+    "expectedProbability": 75,
+    "expectedConfidence": 88,
+    "redFlags": ["Delivery scam pattern", "Suspicious URL"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-004",
+    "label": "SSA suspension scam",
+    "category": "Government",
+    "text": "This is the Social Security Administration. Your SSN has been suspended due to fraudulent activity. Call immediately to avoid arrest.",
+    "expectedRisk": "High",
+    "expectedProbability": 78,
+    "expectedConfidence": 90,
+    "redFlags": ["Government impersonation", "Fear tactics"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-005",
+    "label": "Walmart prize smishing",
+    "category": "Prize",
+    "text": "Congratulations! You've won a $500 Walmart gift card. Claim now: http://walmart-prize-claim.xyz/winner",
+    "expectedRisk": "High",
+    "expectedProbability": 80,
+    "expectedConfidence": 90,
+    "redFlags": ["Prize claim", "Suspicious URL", "Suspicious TLD"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-006",
+    "label": "Chase fraud alert smishing",
+    "category": "Bank",
+    "text": "Chase Bank: Unusual activity detected on your debit card ending 4821. Verify your account at https://chase-secure-verify.com/alert or your card will be frozen.",
+    "expectedRisk": "High",
+    "expectedProbability": 78,
+    "expectedConfidence": 88,
+    "redFlags": ["Bank impersonation", "Suspicious URL", "Fear"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-007",
+    "label": "Fake Amazon order",
+    "category": "Brand impersonation",
+    "text": "Your Amazon order #112-3948271 has been placed for $899.99. If you did not make this purchase, cancel immediately at http://amazon-verify-order.com/cancel",
+    "expectedRisk": "High",
+    "expectedProbability": 75,
+    "expectedConfidence": 88,
+    "redFlags": ["Brand impersonation", "Suspicious URL", "Fear"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-008",
+    "label": "Capital One fraud smishing",
+    "category": "Bank",
+    "text": "Capital One fraud alert: Unauthorized purchase of $342.99 at Best Buy. If this wasn't you, verify now at http://capitalone-fraud-verify.com",
+    "expectedRisk": "High",
+    "expectedProbability": 78,
+    "expectedConfidence": 88,
+    "redFlags": ["Bank impersonation", "Suspicious URL"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-009",
+    "label": "WhatsApp job scam",
+    "category": "Job",
+    "text": "Earn $3,000/week with simple online tasks! No experience needed. DM us on WhatsApp to start today: +1-555-0123",
+    "expectedRisk": "High",
+    "expectedProbability": 70,
+    "expectedConfidence": 85,
+    "redFlags": ["Too-good-to-be-true job", "WhatsApp contact"],
+    "trustSignals": []
+  },
+  {
+    "id": "sms-phish-010",
+    "label": "Bank transfer alert",
+    "category": "Bank",
+    "text": "Bank alert: A transfer of $450.00 was authorized from your account. If you did not make this transaction call immediately or verify at http://bank-secure-alert.com",
+    "expectedRisk": "High",
+    "expectedProbability": 78,
+    "expectedConfidence": 88,
+    "redFlags": ["Bank alert scam", "Suspicious URL"],
+    "trustSignals": []
+  }
+]
