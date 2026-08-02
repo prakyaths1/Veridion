@@ -17,17 +17,16 @@ Beyond detection, Veridion serves as an interactive digital safety learning plat
 ## Screenshots
 
 ### Home
-![Home](assets/screenshots/home.png)
+https://github.com/prakyaths1/Veridion/blob/main/assets/screenshots/Home.png
 
 ### Investigation
-![Scanner](assets/screenshots/scan.png)
+https://github.com/prakyaths1/Veridion/blob/main/assets/screenshots/Scan.png
 
 ### Learn
-![Learn](assets/screenshots/learn.png)
+https://github.com/prakyaths1/Veridion/blob/main/assets/screenshots/Learn.png
 
 ### Practice
-![Practice](assets/screenshots/practice.png)
-
+https://github.com/prakyaths1/Veridion/blob/main/assets/screenshots/Practice.png
 ## Technology Stack
 
 - React
