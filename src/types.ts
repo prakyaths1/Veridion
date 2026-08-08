@@ -2,11 +2,23 @@ export type SourceType = 'email' | 'sms' | 'url' | 'screenshot'
 
 export type RiskLevel = 'Very Low' | 'Low' | 'Moderate' | 'High' | 'Critical'
 
+export type ThreatSeverity = 'Informational' | 'Low' | 'Medium' | 'High' | 'Critical'
+
 export interface EvidenceItem {
   label: string
   detail: string
   weight: number
   source: 'local-ai' | 'online-intelligence' | 'user-input'
+}
+
+export interface ParsedHeader {
+  fromDisplayName?: string
+  fromEmail?: string
+  fromDomain?: string
+  replyTo?: string
+  returnPath?: string
+  subject?: string
+  headers?: Record<string, string>
 }
 
 export interface DetectorContext {
@@ -16,6 +28,12 @@ export interface DetectorContext {
   urlMatches: string[]
   wordCount: number
   isVeryShort: boolean
+  header?: ParsedHeader
+  subject?: string
+  body?: string
+  urls?: string[]
+  attachments?: string[]
+  html?: string
 }
 
 export interface DetectorResult {
@@ -32,6 +50,7 @@ export interface InvestigationReport {
   summary: string
   explanation: string
   riskLevel: RiskLevel
+  severity: ThreatSeverity
   trustScore: number
   scamProbability: number
   analysisConfidence: number

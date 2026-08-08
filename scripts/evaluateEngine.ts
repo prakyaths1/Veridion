@@ -272,10 +272,15 @@ export function runComprehensiveEvaluation(): EvaluationResult {
 }
 
 export function generateEvaluationReportMarkdown(results: EvaluationResult): string {
+  const emailCount = results.sourceTypeMetrics['email']?.total ?? 0
+  const smsCount = results.sourceTypeMetrics['sms']?.total ?? 0
+  const urlCount = results.sourceTypeMetrics['url']?.total ?? 0
+  const screenshotCount = results.sourceTypeMetrics['screenshot']?.total ?? 0
+
   return `# Veridion Investigation Engine — Evaluation Report
 
 **Evaluation Timestamp:** ${results.timestamp}  
-**Total Benchmark Samples Evaluated:** ${results.total} across ${Object.keys(results.datasetProvenance).length} dataset source files  
+**Total Benchmark Samples Evaluated:** ${results.total} labeled samples (${emailCount} Emails, ${smsCount} SMS, ${urlCount} URLs, ${screenshotCount} Screenshot OCR) across ${Object.keys(results.datasetProvenance).length} dataset source files  
 
 ---
 

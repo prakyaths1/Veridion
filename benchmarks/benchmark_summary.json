@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-08-02T20:05:52.059Z",
-  "total": 678,
-  "truePositives": 329,
+  "timestamp": "2026-08-08T00:19:39.702Z",
+  "total": 728,
+  "truePositives": 370,
   "falsePositives": 0,
-  "trueNegatives": 323,
-  "falseNegatives": 26,
-  "accuracy": 0.962,
+  "trueNegatives": 348,
+  "falseNegatives": 10,
+  "accuracy": 0.986,
   "precision": 1,
-  "recall": 0.927,
-  "f1Score": 0.962,
+  "recall": 0.974,
+  "f1Score": 0.987,
   "falsePositiveRate": 0,
-  "falseNegativeRate": 0.073,
+  "falseNegativeRate": 0.026,
   "binaryConfusionMatrix": {
-    "tp": 329,
+    "tp": 370,
     "fp": 0,
-    "tn": 323,
-    "fn": 26
+    "tn": 348,
+    "fn": 10
   },
   "multiclassConfusionMatrix": {
     "Very Low": {
-      "Very Low": 322,
-      "Low": 1,
+      "Very Low": 343,
+      "Low": 5,
       "Moderate": 0,
       "High": 0,
       "Critical": 0
@@ -33,28 +33,223 @@
       "Critical": 0
     },
     "Moderate": {
-      "Very Low": 1,
-      "Low": 0,
+      "Very Low": 0,
+      "Low": 1,
       "Moderate": 0,
       "High": 0,
-      "Critical": 0
+      "Critical": 1
     },
     "High": {
-      "Very Low": 14,
-      "Low": 9,
-      "Moderate": 63,
-      "High": 36,
-      "Critical": 152
+      "Very Low": 9,
+      "Low": 0,
+      "Moderate": 50,
+      "High": 39,
+      "Critical": 197
     },
     "Critical": {
       "Very Low": 0,
-      "Low": 2,
-      "Moderate": 14,
-      "High": 27,
-      "Critical": 37
+      "Low": 0,
+      "Moderate": 4,
+      "High": 19,
+      "Critical": 60
     }
   },
   "categoryMetrics": {
+    "GitHub": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Amazon": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "College / Admissions": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Microsoft": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Google": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "School": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Bank": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "PayPal": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "USPS": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "FedEx": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Canvas": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "PowerSchool": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace HR": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Payroll": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Workplace Collaboration": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Microsoft Teams": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Google Docs": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "College / Faculty": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "School / Athletics": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Microsoft": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Payroll": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Fake PayPal": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "BEC": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "BEC / Gift Card": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "QR Phishing": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Fake Invoice": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Canvas": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake PowerSchool": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Google": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Credential Theft": {
+      "total": 2,
+      "correct": 2,
+      "accuracy": 1
+    },
+    "Fake USPS": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake FedEx": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Bank": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "BEC / Financial": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Amazon": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "College / Financial Aid": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake Invoice / Vishing": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Fake GitHub": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
+    "Gift Card": {
+      "total": 1,
+      "correct": 1,
+      "accuracy": 1
+    },
     "Business Email Compromise / CEO Fraud": {
       "total": 4,
       "correct": 4,
@@ -247,8 +442,8 @@
     },
     "Brand Impersonation / Credential Phishing": {
       "total": 4,
-      "correct": 3,
-      "accuracy": 0.75
+      "correct": 4,
+      "accuracy": 1
     },
     "Delivery Phishing": {
       "total": 2,
@@ -297,8 +492,8 @@
     },
     "Tech Support Scam": {
       "total": 12,
-      "correct": 11,
-      "accuracy": 0.917
+      "correct": 12,
+      "accuracy": 1
     },
     "Financial Account Phishing": {
       "total": 1,
@@ -422,8 +617,8 @@
     },
     "Prize / Lottery Smishing": {
       "total": 13,
-      "correct": 3,
-      "accuracy": 0.231
+      "correct": 12,
+      "accuracy": 0.923
     },
     "Financial Smishing": {
       "total": 7,
@@ -437,8 +632,8 @@
     },
     "Gift Card Scam": {
       "total": 3,
-      "correct": 2,
-      "accuracy": 0.667
+      "correct": 3,
+      "accuracy": 1
     },
     "Delivery Smishing": {
       "total": 6,
@@ -557,8 +752,8 @@
     },
     "Premium Rate SMS": {
       "total": 5,
-      "correct": 0,
-      "accuracy": 0
+      "correct": 2,
+      "accuracy": 0.4
     },
     "Subscription Smishing": {
       "total": 2,
@@ -602,13 +797,13 @@
     },
     "Prize Smishing": {
       "total": 1,
-      "correct": 0,
-      "accuracy": 0
+      "correct": 1,
+      "accuracy": 1
     },
     "Tech Support Smishing": {
       "total": 1,
-      "correct": 0,
-      "accuracy": 0
+      "correct": 1,
+      "accuracy": 1
     },
     "Legitimate Service URL": {
       "total": 1,
@@ -748,31 +943,31 @@
   },
   "sourceTypeMetrics": {
     "email": {
-      "total": 245,
-      "correct": 244,
-      "accuracy": 0.996,
-      "tp": 134,
+      "total": 295,
+      "correct": 295,
+      "accuracy": 1,
+      "tp": 160,
       "fp": 0,
-      "tn": 110,
-      "fn": 1
+      "tn": 135,
+      "fn": 0
     },
     "sms": {
       "total": 193,
-      "correct": 169,
-      "accuracy": 0.876,
-      "tp": 76,
+      "correct": 183,
+      "accuracy": 0.948,
+      "tp": 90,
       "fp": 0,
       "tn": 93,
-      "fn": 24
+      "fn": 10
     },
     "screenshot": {
       "total": 110,
-      "correct": 109,
-      "accuracy": 0.991,
-      "tp": 54,
+      "correct": 110,
+      "accuracy": 1,
+      "tp": 55,
       "fp": 0,
       "tn": 55,
-      "fn": 1
+      "fn": 0
     },
     "url": {
       "total": 130,
@@ -785,6 +980,12 @@
     }
   },
   "datasetProvenance": {
+    "Veridion 50 Benchmark": {
+      "datasetName": "Veridion 50 Benchmark",
+      "datasetType": "Curated Test Cases",
+      "count": 50,
+      "license": "MIT"
+    },
     "FBI IC3 BEC Public Archive": {
       "datasetName": "FBI IC3 BEC Public Archive",
       "datasetType": "Public Dataset",
@@ -1257,11 +1458,11 @@
       "status": "No Samples"
     },
     "70-79%": {
-      "total": 70,
-      "correct": 59,
-      "avgConfidence": 80.1,
-      "actualAccuracy": 84,
-      "status": "Well Calibrated ✓"
+      "total": 68,
+      "correct": 64,
+      "avgConfidence": 80.4,
+      "actualAccuracy": 94,
+      "status": "Conservative"
     },
     "80-84%": {
       "total": 0,
@@ -1271,131 +1472,155 @@
       "status": "No Samples"
     },
     "85-89%": {
-      "total": 177,
-      "correct": 162,
-      "avgConfidence": 88.2,
-      "actualAccuracy": 92,
-      "status": "Well Calibrated ✓"
+      "total": 252,
+      "correct": 246,
+      "avgConfidence": 88,
+      "actualAccuracy": 98,
+      "status": "Conservative"
     },
     "90-94%": {
-      "total": 402,
-      "correct": 402,
-      "avgConfidence": 92.8,
+      "total": 395,
+      "correct": 395,
+      "avgConfidence": 93.2,
       "actualAccuracy": 100,
       "status": "Well Calibrated ✓"
     },
     "95-99%": {
-      "total": 29,
-      "correct": 29,
+      "total": 13,
+      "correct": 13,
       "avgConfidence": 95,
       "actualAccuracy": 100,
       "status": "Well Calibrated ✓"
     }
   },
   "detectorContributions": {
-    "Brand Impersonation": {
-      "firedTotal": 135,
-      "firedOnTP": 134,
+    "Trust Signal Detector": {
+      "firedTotal": 65,
+      "firedOnTP": 0,
       "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 1,
-      "totalScoreContribution": 917
+      "firedOnTN": 65,
+      "firedOnFN": 0,
+      "totalScoreContribution": 310
     },
-    "Financial Request Detector": {
-      "firedTotal": 104,
+    "Language Quality Detector": {
+      "firedTotal": 160,
       "firedOnTP": 104,
+      "firedOnFP": 0,
+      "firedOnTN": 56,
+      "firedOnFN": 0,
+      "totalScoreContribution": 424
+    },
+    "Bank Scam Detector": {
+      "firedTotal": 121,
+      "firedOnTP": 119,
+      "firedOnFP": 0,
+      "firedOnTN": 2,
+      "firedOnFN": 0,
+      "totalScoreContribution": 1125
+    },
+    "Urgency Detector": {
+      "firedTotal": 165,
+      "firedOnTP": 149,
+      "firedOnFP": 0,
+      "firedOnTN": 13,
+      "firedOnFN": 3,
+      "totalScoreContribution": 519
+    },
+    "Brand Impersonation": {
+      "firedTotal": 167,
+      "firedOnTP": 164,
+      "firedOnFP": 0,
+      "firedOnTN": 3,
+      "firedOnFN": 0,
+      "totalScoreContribution": 1218
+    },
+    "URL Detector": {
+      "firedTotal": 239,
+      "firedOnTP": 239,
       "firedOnFP": 0,
       "firedOnTN": 0,
       "firedOnFN": 0,
-      "totalScoreContribution": 969
+      "totalScoreContribution": 2373
+    },
+    "Credential Request Detector": {
+      "firedTotal": 143,
+      "firedOnTP": 143,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 1287
+    },
+    "Fear Detector": {
+      "firedTotal": 36,
+      "firedOnTP": 36,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 216
+    },
+    "Financial Request Detector": {
+      "firedTotal": 75,
+      "firedOnTP": 75,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 714
+    },
+    "Header Impersonation Detector": {
+      "firedTotal": 6,
+      "firedOnTP": 6,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 54
+    },
+    "Financial Asset Detector": {
+      "firedTotal": 8,
+      "firedOnTP": 8,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 71
+    },
+    "Document Lure Detector": {
+      "firedTotal": 7,
+      "firedOnTP": 7,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 70
+    },
+    "Authority Detector": {
+      "firedTotal": 36,
+      "firedOnTP": 36,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 303
     },
     "Romance / Wrong Number Detector": {
+      "firedTotal": 21,
+      "firedOnTP": 20,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 1,
+      "totalScoreContribution": 184
+    },
+    "Reward Detector": {
+      "firedTotal": 41,
+      "firedOnTP": 41,
+      "firedOnFP": 0,
+      "firedOnTN": 0,
+      "firedOnFN": 0,
+      "totalScoreContribution": 369
+    },
+    "Delivery Scam Detector": {
       "firedTotal": 19,
       "firedOnTP": 18,
       "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 1,
-      "totalScoreContribution": 170
-    },
-    "Urgency Detector": {
-      "firedTotal": 148,
-      "firedOnTP": 128,
-      "firedOnFP": 0,
-      "firedOnTN": 12,
-      "firedOnFN": 8,
-      "totalScoreContribution": 462
-    },
-    "Authority Detector": {
-      "firedTotal": 32,
-      "firedOnTP": 32,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 0,
-      "totalScoreContribution": 269
-    },
-    "Credential Request Detector": {
-      "firedTotal": 132,
-      "firedOnTP": 132,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 0,
-      "totalScoreContribution": 1188
-    },
-    "Trust Signal Detector": {
-      "firedTotal": 153,
-      "firedOnTP": 6,
-      "firedOnFP": 0,
-      "firedOnTN": 146,
-      "firedOnFN": 1,
-      "totalScoreContribution": 749
-    },
-    "Language Quality Detector": {
-      "firedTotal": 125,
-      "firedOnTP": 69,
-      "firedOnFP": 0,
-      "firedOnTN": 55,
-      "firedOnFN": 1,
-      "totalScoreContribution": 320
-    },
-    "URL Detector": {
-      "firedTotal": 218,
-      "firedOnTP": 218,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 0,
-      "totalScoreContribution": 2148
-    },
-    "Reward Detector": {
-      "firedTotal": 38,
-      "firedOnTP": 29,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 9,
-      "totalScoreContribution": 266
-    },
-    "Fear Detector": {
-      "firedTotal": 33,
-      "firedOnTP": 32,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 1,
-      "totalScoreContribution": 165
-    },
-    "Bank Scam Detector": {
-      "firedTotal": 115,
-      "firedOnTP": 115,
-      "firedOnFP": 0,
-      "firedOnTN": 0,
-      "firedOnFN": 0,
-      "totalScoreContribution": 1081
-    },
-    "Delivery Scam Detector": {
-      "firedTotal": 17,
-      "firedOnTP": 16,
-      "firedOnFP": 0,
       "firedOnTN": 1,
       "firedOnFN": 0,
-      "totalScoreContribution": 115
+      "totalScoreContribution": 130
     },
     "Job Scam Detector": {
       "firedTotal": 12,
@@ -1407,92 +1632,6 @@
     }
   },
   "misclassifications": [
-    {
-      "id": "email-phish-024",
-      "text": "DocuSign: Action Required - Please sign 'Contract_Agreement_2026.pdf'. Verify your identity at https://docusign-sign-document.com/verify to complete signing.",
-      "category": "Brand Impersonation / Credential Phishing",
-      "sourceType": "email",
-      "datasetName": "Nazario Phishing Email Corpus",
-      "expectedRisk": "High",
-      "actualRisk": "Very Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 0,
-      "confidence": 88,
-      "redFlags": [],
-      "trustSignals": [],
-      "firedDetectors": [],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Brand Impersonation / Credential Phishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Brand Impersonation / Credential Phishing."
-    },
-    {
-      "id": "screenshot-phish-002",
-      "text": "Screenshot text: SYSTEM ERROR #0x88921! Windows Defender Alert: Your PC is infected with Trojan Spyware. Call Support at 1-800-555-0199 immediately. Do not close this window.",
-      "category": "Tech Support Scam",
-      "sourceType": "screenshot",
-      "datasetName": "FTC Tech Support Alert Corpus",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 18,
-      "confidence": 89,
-      "redFlags": [
-        "The message uses mild time-pressure language. This is common in both legitimate and scam communications. On its own, urgency is a weak signal — it becomes more concerning when combined with requests for sensitive information or suspicious links.",
-        "The message threatens negative consequences (account suspension, legal action, penalties, arrest) to pressure you into compliance. This is a fear-based social engineering tactic: scammers create a sense of danger to override your critical thinking. Legitimate organizations resolve disputes through formal channels, not threatening text messages or emails."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Urgency Detector",
-        "Fear Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Tech Support Scam\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Tech Support Scam."
-    },
-    {
-      "id": "sms-uci-spam-001",
-      "text": "Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 82,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
-      "id": "sms-uci-spam-003",
-      "text": "WINNER!! As a valued network customer you have been selected to receivea £900 prize reward! To claim call 09061701461. Claim code KL341. Valid 12 hours only.",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "Critical",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 82,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
     {
       "id": "sms-uci-spam-004",
       "text": "Had your mobile 11 months or more? U R entitled to Update to the latest colour camera mobile for Free! Call The Mobile Update Co FREE on 08002986030",
@@ -1512,141 +1651,26 @@
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Financial Smishing."
     },
     {
-      "id": "sms-uci-spam-005",
-      "text": "URGENT! You have won a 1 week FREE membership in our £100,000 Prize Jackpot! Txt the word CLAIM to 81010 T&C www.dbuk.net LBL21P",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 24,
-      "confidence": 89,
-      "redFlags": [
-        "The message uses mild time-pressure language. This is common in both legitimate and scam communications. On its own, urgency is a weak signal — it becomes more concerning when combined with requests for sensitive information or suspicious links.",
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Urgency Detector",
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
       "id": "sms-phish-011",
       "text": "Sorry to bother you Anna, are we still meeting for lunch at 12? Oh wrong number? So sorry! You seem nice though, what is your name?",
       "category": "Wrong Number / Pig Butchering",
       "sourceType": "sms",
       "datasetName": "IC3 Pig Butchering Reports",
       "expectedRisk": "Moderate",
-      "actualRisk": "Very Low",
+      "actualRisk": "Low",
       "expectedIsScam": true,
       "actualIsScam": false,
-      "scamProbability": 7,
-      "confidence": 75,
+      "scamProbability": 22,
+      "confidence": 82,
       "redFlags": [
         "The message uses patterns common in romance or wrong-number scams: unsolicited personal contact, requests for money, claims of being stranded, or terms of endearment combined with financial requests. These scams build emotional trust before requesting money, often claiming emergencies at customs, hospitals, or airports."
       ],
-      "trustSignals": [
-        "The message uses professional workplace language (\"team update\", \"agenda\", \"meeting\", \"review\") without requesting credentials, payments, or urgent action — consistent with routine business communication that poses no threat."
-      ],
+      "trustSignals": [],
       "firedDetectors": [
-        "Romance / Wrong Number Detector",
-        "Trust Signal Detector"
+        "Romance / Wrong Number Detector"
       ],
       "likelyCause": "Missed detection due to vocabulary edge case in \"Wrong Number / Pig Butchering\"",
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Wrong Number / Pig Butchering."
-    },
-    {
-      "id": "sms-phish-015",
-      "text": "Emergency: Grandma is in the hospital and needs 2 Google Play gift cards ($100 each) for treatment deposit. Text me the codes immediately.",
-      "category": "Gift Card Scam",
-      "sourceType": "sms",
-      "datasetName": "FTC Grandparent Scam Corpus",
-      "expectedRisk": "Critical",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 89,
-      "redFlags": [
-        "The message references google with urgent language. Scammers exploit brand trust to create false urgency. However, urgency alone with a brand name is only a moderate signal — some legitimate notifications (shipping deadlines, payment reminders) also use time pressure.",
-        "The message uses time-pressure language alongside a request that could be suspicious. Even mild urgency (\"today\", \"immediately\") becomes a risk signal when paired with requests for credentials, payments, or account actions."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Brand Impersonation",
-        "Urgency Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Gift Card Scam\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Gift Card Scam."
-    },
-    {
-      "id": "sms-uci-052",
-      "text": "URGENT! You have won a 1 week FREE membership in our £100,000 Prize Jackpot! Txt CLAIM to 81010",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 24,
-      "confidence": 89,
-      "redFlags": [
-        "The message uses mild time-pressure language. This is common in both legitimate and scam communications. On its own, urgency is a weak signal — it becomes more concerning when combined with requests for sensitive information or suspicious links.",
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Urgency Detector",
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
-      "id": "sms-uci-053",
-      "text": "XXXMobileMovieClub: To use your credit, click the WAP link in the next txt or call 08701230046",
-      "category": "Premium Rate SMS",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Very Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 0,
-      "confidence": 88,
-      "redFlags": [],
-      "trustSignals": [],
-      "firedDetectors": [],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Premium Rate SMS\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Premium Rate SMS."
-    },
-    {
-      "id": "sms-uci-054",
-      "text": "England v Macedonia - dont miss the goals/team news. Txt ur national team to 87077 eg ENGLAND to 87077 Try:WALES, SCOTLAND 4txt/ú1.20 POBoxbox36650145215b16",
-      "category": "Premium Rate SMS",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Very Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 7,
-      "confidence": 82,
-      "redFlags": [
-        "The message contains unusual formatting patterns (excessive capitalization, repeated punctuation, or erratic style) that are statistically more common in scam communications. While poor formatting alone does not confirm a scam, it is a supporting indicator when combined with other red flags."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Language Quality Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Premium Rate SMS\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Premium Rate SMS."
     },
     {
       "id": "sms-uci-055",
@@ -1685,24 +1709,6 @@
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
     },
     {
-      "id": "sms-uci-057",
-      "text": "Please call our customer service line on 08000930705 to claim your free video camera phone now!",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Very Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 0,
-      "confidence": 88,
-      "redFlags": [],
-      "trustSignals": [],
-      "firedDetectors": [],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
       "id": "sms-uci-058",
       "text": "Your 2004 account balance is 500 bonus points. To claim call 08712400800 now. 150p/min",
       "category": "Premium Rate SMS",
@@ -1719,74 +1725,6 @@
       "firedDetectors": [],
       "likelyCause": "Missed detection due to vocabulary edge case in \"Premium Rate SMS\"",
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Premium Rate SMS."
-    },
-    {
-      "id": "sms-uci-059",
-      "text": "URGENT! Your Mobile number has been awarded a £2000 prize. Call 09061221061 to claim.",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 24,
-      "confidence": 88,
-      "redFlags": [
-        "The message uses mild time-pressure language. This is common in both legitimate and scam communications. On its own, urgency is a weak signal — it becomes more concerning when combined with requests for sensitive information or suspicious links.",
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Urgency Detector",
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
-      "id": "sms-uci-060",
-      "text": "Congrats! 2 Mobile 3G Phones & £400 cash. Call 09063440451 now. 150p/min",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 81,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
-      "id": "sms-uci-063",
-      "text": "Free entry in a £10,000 cash draw! Text WIN to 80082 now to enter. 18+ only.",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 82,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
     },
     {
       "id": "sms-uci-064",
@@ -1869,28 +1807,6 @@
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Financial Smishing."
     },
     {
-      "id": "sms-uci-068",
-      "text": "Congratulations! You have been selected for a £500 shopping voucher. Reply YES to 88010.",
-      "category": "Prize / Lottery Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 81,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize / Lottery Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize / Lottery Smishing."
-    },
-    {
       "id": "sms-uci-072",
       "text": "Bank Alert: $450 transfer authorized from your account. If not you, call 080088921 immediately.",
       "category": "Bank Smishing",
@@ -1911,49 +1827,59 @@
       ],
       "likelyCause": "Missed detection due to vocabulary edge case in \"Bank Smishing\"",
       "suggestedImprovement": "Expand pattern coverage in relevant detector for Bank Smishing."
-    },
-    {
-      "id": "sms-uci-095",
-      "text": "WhatsApp Reward: You have won $50,000 cash. Reply with bank account details to receive wire.",
-      "category": "Prize Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 20,
-      "confidence": 82,
-      "redFlags": [
-        "The message promises an unexpected reward, prize, or windfall. This exploits the \"reciprocity\" and \"greed\" psychological levers — you feel excited about winning and are willing to overlook red flags. Legitimate sweepstakes never ask for fees, personal information, or gift card codes to claim prizes."
-      ],
-      "trustSignals": [],
-      "firedDetectors": [
-        "Reward Detector"
-      ],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Prize Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Prize Smishing."
-    },
-    {
-      "id": "sms-uci-096",
-      "text": "Microsoft Support: Virus detected on phone. Call 1-800-555-0199 for removal.",
-      "category": "Tech Support Smishing",
-      "sourceType": "sms",
-      "datasetName": "UCI SMS Spam Collection",
-      "expectedRisk": "High",
-      "actualRisk": "Very Low",
-      "expectedIsScam": true,
-      "actualIsScam": false,
-      "scamProbability": 0,
-      "confidence": 88,
-      "redFlags": [],
-      "trustSignals": [],
-      "firedDetectors": [],
-      "likelyCause": "Missed detection due to vocabulary edge case in \"Tech Support Smishing\"",
-      "suggestedImprovement": "Expand pattern coverage in relevant detector for Tech Support Smishing."
     }
   ],
   "passedSampleIds": [
+    "legit-email-001",
+    "legit-email-002",
+    "legit-email-003",
+    "legit-email-004",
+    "legit-email-005",
+    "legit-email-006",
+    "legit-email-007",
+    "legit-email-008",
+    "legit-email-009",
+    "legit-email-010",
+    "legit-email-011",
+    "legit-email-012",
+    "legit-email-013",
+    "legit-email-014",
+    "legit-email-015",
+    "legit-email-016",
+    "legit-email-017",
+    "legit-email-018",
+    "legit-email-019",
+    "legit-email-020",
+    "legit-email-021",
+    "legit-email-022",
+    "legit-email-023",
+    "legit-email-024",
+    "legit-email-025",
+    "phish-email-001",
+    "phish-email-002",
+    "phish-email-003",
+    "phish-email-004",
+    "phish-email-005",
+    "phish-email-006",
+    "phish-email-007",
+    "phish-email-008",
+    "phish-email-009",
+    "phish-email-010",
+    "phish-email-011",
+    "phish-email-012",
+    "phish-email-013",
+    "phish-email-014",
+    "phish-email-015",
+    "phish-email-016",
+    "phish-email-017",
+    "phish-email-018",
+    "phish-email-019",
+    "phish-email-020",
+    "phish-email-021",
+    "phish-email-022",
+    "phish-email-023",
+    "phish-email-024",
+    "phish-email-025",
     "email-bec-001",
     "email-bec-002",
     "email-bec-003",
@@ -2147,6 +2073,7 @@
     "email-phish-021",
     "email-phish-022",
     "email-phish-023",
+    "email-phish-024",
     "email-phish-025",
     "veridion-threat-001",
     "veridion-threat-002",
@@ -2254,6 +2181,7 @@
     "screenshot-legit-004",
     "screenshot-legit-005",
     "screenshot-phish-001",
+    "screenshot-phish-002",
     "screenshot-phish-003",
     "screenshot-phish-004",
     "screenshot-phish-005",
@@ -2380,7 +2308,10 @@
     "sms-legit-013",
     "sms-legit-014",
     "sms-legit-015",
+    "sms-uci-spam-001",
     "sms-uci-spam-002",
+    "sms-uci-spam-003",
+    "sms-uci-spam-005",
     "sms-phish-001",
     "sms-phish-002",
     "sms-phish-003",
@@ -2394,6 +2325,7 @@
     "sms-phish-012",
     "sms-phish-013",
     "sms-phish-014",
+    "sms-phish-015",
     "sms-uci-001",
     "sms-uci-002",
     "sms-uci-003",
@@ -2445,8 +2377,16 @@
     "sms-uci-049",
     "sms-uci-050",
     "sms-uci-051",
+    "sms-uci-052",
+    "sms-uci-053",
+    "sms-uci-054",
+    "sms-uci-057",
+    "sms-uci-059",
+    "sms-uci-060",
     "sms-uci-061",
     "sms-uci-062",
+    "sms-uci-063",
+    "sms-uci-068",
     "sms-uci-069",
     "sms-uci-070",
     "sms-uci-071",
@@ -2472,6 +2412,8 @@
     "sms-uci-092",
     "sms-uci-093",
     "sms-uci-094",
+    "sms-uci-095",
+    "sms-uci-096",
     "sms-uci-097",
     "sms-uci-098",
     "sms-uci-099",
@@ -2608,31 +2550,15 @@
     "url-phishtank-phish-050"
   ],
   "failedSampleIds": [
-    "email-phish-024",
-    "screenshot-phish-002",
-    "sms-uci-spam-001",
-    "sms-uci-spam-003",
     "sms-uci-spam-004",
-    "sms-uci-spam-005",
     "sms-phish-011",
-    "sms-phish-015",
-    "sms-uci-052",
-    "sms-uci-053",
-    "sms-uci-054",
     "sms-uci-055",
     "sms-uci-056",
-    "sms-uci-057",
     "sms-uci-058",
-    "sms-uci-059",
-    "sms-uci-060",
-    "sms-uci-063",
     "sms-uci-064",
     "sms-uci-065",
     "sms-uci-066",
     "sms-uci-067",
-    "sms-uci-068",
-    "sms-uci-072",
-    "sms-uci-095",
-    "sms-uci-096"
+    "sms-uci-072"
   ]
 }

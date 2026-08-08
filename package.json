@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
+    "test": "node --experimental-strip-types scripts/checkRegression.ts",
     "evaluate:engine": "node --experimental-strip-types scripts/evaluateEngine.ts",
     "benchmark:engine": "node --experimental-strip-types scripts/benchmarkEngine.ts",
     "fetch:datasets": "node --experimental-strip-types scripts/fetchDatasets.ts",

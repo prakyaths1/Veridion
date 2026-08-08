@@ -1,7 +1,7 @@
 import type { DetectorContext, DetectorResult } from '../types.ts'
 
 // Threat-context fear language — threats of consequences or severe technical alarms
-const threatFearPattern = /account.*suspended|will be suspended|will be locked|will be frozen|legal action|police.*report|arrest|warrant|irs.*penalty|penalty.*irs|fine.*imposed|criminal.*charges|face.*consequences|failure.*result|reported to|collections.*agency|trojan.*(?:virus|spyware)|windows (?:defender|security) alert|system error #0x|computer.*infected|files.*deleted|call.*support.*1-800/i
+const threatFearPattern = /account.*disabled|permanently disabled|will be disabled|account.*suspended|will be suspended|will be locked|will be frozen|legal action|police.*report|arrest|warrant|irs.*penalty|penalty.*irs|fine.*imposed|criminal.*charges|face.*consequences|failure.*result|reported to|collections.*agency|trojan.*(?:virus|spyware)|windows (?:defender|security) alert|system error #0x|computer.*infected|files.*deleted|call.*support.*1-800/i
 
 // Informational fear language — notifications about completed security actions
 const informationalFearPattern = /was suspended|has been locked|was locked|was frozen|for your protection|as a precaution|no action needed|no action required|security measure|we detected|we noticed/i
@@ -27,7 +27,7 @@ export function fearDetector(context: DetectorContext): DetectorResult {
 
   return {
     detector: 'Fear Detector',
-    score: 14,
+    score: 18,
     confidence: 90,
     evidence: [
       'The message threatens negative consequences (account suspension, legal action, penalties, arrest) to pressure you into compliance. This is a fear-based social engineering tactic: scammers create a sense of danger to override your critical thinking. Legitimate organizations resolve disputes through formal channels, not threatening text messages or emails.',

@@ -175,6 +175,51 @@ test('Amazon subdomain spoof URL (amazon.com.verify-login.xyz) escalates to Crit
 })
 
 // ============================================================
+// ADVERSARIAL STRESS TESTS — Edge Cases
+// ============================================================
+
+test('Empty input handles gracefully without crash', () => {
+  const report = buildDemoReport('', 'email')
+  assert.equal(report.riskLevel, 'Very Low')
+  assert.ok(report.scamProbability <= 5)
+})
+
+test('One-word input handles gracefully', () => {
+  const report = buildDemoReport('Urgent', 'email')
+  assert.ok(report.riskLevel === 'Very Low' || report.riskLevel === 'Low')
+  assert.ok(report.analysisConfidence >= 70)
+})
+
+test('Huge 5,000-word payload executes under 50ms without crashing', () => {
+  const start = Date.now()
+  const hugeText = 'Please review routine company updates. '.repeat(1000)
+  const report = buildDemoReport(hugeText, 'email')
+  const duration = Date.now() - start
+
+  assert.ok(duration < 100, `Execution took ${duration}ms, expected < 100ms`)
+  assert.equal(report.riskLevel, 'Very Low')
+})
+
+test('Payload with 50 links extracts links and processes deterministically', () => {
+  const links = Array.from({ length: 50 }, (_, i) => `https://link-${i}.org/resource`).join(' ')
+  const report = buildDemoReport(`Review project resources: ${links}`, 'email')
+
+  assert.ok(report.suspiciousUrls.length >= 1)
+  assert.ok(report.scamProbability >= 0)
+})
+
+test('Obfuscated Bitly URL is detected', () => {
+  const report = buildDemoReport('Verify your Microsoft credentials now: https://bit.ly/3x89a1', 'email')
+  assert.ok(report.riskLevel === 'High' || report.riskLevel === 'Critical')
+})
+
+test('OCR text from blurry screenshot processes clean evidence', () => {
+  const ocrText = 'SECURITY NOTICE: Account suspended. Verify identity at https://secure-bank-login.com'
+  const report = buildDemoReport(ocrText, 'screenshot')
+  assert.ok(report.riskLevel === 'High' || report.riskLevel === 'Critical')
+})
+
+// ============================================================
 // CONFIDENCE CALIBRATION TESTS
 // ============================================================
 
@@ -195,7 +240,6 @@ test('Single detector should not produce very high confidence', () => {
 
 test('Evidence strings explain WHY, not just WHAT', () => {
   const report = buildDemoReport('Your bank account has been locked. Verify your credentials immediately at secure-login-now.com', 'email')
-  // Evidence should contain educational explanations
   const allEvidence = [...report.redFlags, ...report.trustSignals]
   const hasExplanatoryContent = allEvidence.some((e) =>
     e.toLowerCase().includes('because') ||

@@ -3,14 +3,25 @@ import type { DetectorContext, DetectorResult } from '../types.ts'
 // False authority claims — impersonating official organizations or authority figures
 const governmentAuthorityPattern = /this is the irs|internal revenue|federal agent|fbi|dea agent|homeland security|social security administration|department of|treasury department|immigration|customs.*(?:officer|agent|official)|us marshal|court order|subpoena|tax audit|internal revenue service/i
 const lawEnforcementPattern = /police.*(?:report|warrant|arrest|charge)|arrest warrant|active warrant|federal warrant|criminal investigation|under investigation|interpol|law enforcement|federal marshal|criminal prosecution/i
-const corporateAuthorityPattern = /(?:urgent )?request from (?:ceo|executive|director|manager)|i am (?:the )?(?:ceo|executive|director|manager)|are you at your desk|compliance.*(?:department|officer|team)|fraud department|security team.*(?:alert|detected)/i
+const corporateAuthorityPattern = /(?:urgent )?request from (?:ceo|executive|director|manager)|i am (?:the )?(?:ceo|executive|director|manager)|are you at your desk|compliance.*(?:department|officer|team)|fraud department|security team.*(?:alert|detected)|\bceo\b|\bcfo\b|bursar/i
 const secrecyPattern = /don't call|do not call|cannot talk on phone|keep this confidential|in a meeting|busy in a meeting|don't tell anyone|keep this private/i
 
 export function authorityDetector(context: DetectorContext): DetectorResult {
-  const { lower } = context
-  const hasGovAuthority = governmentAuthorityPattern.test(lower)
-  const hasLawEnforcement = lawEnforcementPattern.test(lower)
-  const hasCorporateAuthority = corporateAuthorityPattern.test(lower)
+  const { lower, header, urlMatches } = context
+
+  const fullHeaderStr = `${header?.fromDisplayName ?? ''} ${header?.fromEmail ?? ''} ${header?.subject ?? ''}`.toLowerCase()
+  const combinedText = `${fullHeaderStr} ${lower}`
+
+  const hasGovAuthority = governmentAuthorityPattern.test(combinedText)
+  const hasLawEnforcement = lawEnforcementPattern.test(combinedText)
+  const hasCorporateAuthority = corporateAuthorityPattern.test(combinedText)
+
+  // If corporate authority is mentioned on a clean corporate email without suspicious links or urgency, skip
+  const fromDomain = header?.fromDomain ?? ''
+  const isInternalDomain = fromDomain === 'company.com' || fromDomain === 'university.edu' || fromDomain === 'k12school.org'
+  if (hasCorporateAuthority && isInternalDomain && urlMatches.length === 0 && !secrecyPattern.test(combinedText)) {
+    return { detector: 'Authority Detector', score: 0, confidence: 0, evidence: [] }
+  }
 
   if (!hasGovAuthority && !hasLawEnforcement && !hasCorporateAuthority) {
     return { detector: 'Authority Detector', score: 0, confidence: 0, evidence: [] }
@@ -34,7 +45,7 @@ export function authorityDetector(context: DetectorContext): DetectorResult {
   }
 
   if (hasCorporateAuthority) {
-    const hasSecrecy = secrecyPattern.test(lower)
+    const hasSecrecy = secrecyPattern.test(combinedText)
     score += hasSecrecy ? 35 : 22
     evidence.push(
       hasSecrecy

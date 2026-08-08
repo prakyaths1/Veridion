@@ -1,16 +1,18 @@
 import type { DetectorContext, DetectorResult } from '../types.ts'
 import { KNOWN_BRANDS } from '../constants/brands.ts'
+import { dehomoglyph } from '../utils/normalization.ts'
 
-const credentialRequestCue = /(?:enter|confirm|verify|provide|send|submit|update|share)\s[\w\s]*(?:password|credentials|ssn|pin|credit card|bank account|gift card|recovery code|seed phrase|wallet|otp|verification code)|(?:password|credentials|ssn|pin|credit card)\s[\w\s]*(?:required|needed|enter|confirm|verify)/i
-const informationalCredentialCue = /password.*(?:changed|updated|reset|successful)|login.*(?:successful|detected)|signed in from|new sign-in|credentials.*verified|code.*sent|we sent you/i
-const urgencyCue = /immediately|urgent|final notice|act now|right now|within 24 hours|within 48 hours|locked|suspended|expires/i
-const suspiciousUrlCue = /(?:bit\.ly|tinyurl|is\.gd|\b[a-z0-9]+-(?:alert|login|secure|verify|update|auth|cancel|support|security|wallet|account|delivery|track)\b|\.(?:xyz|top|club|icu|buzz|tk|ml|ga|cf|gq|work|click|link|info))/i
+const credentialRequestCue = /(?:enter|confirm|verify|provide|send|submit|update|share|reset)\s[\w\s]*(?:password|credentials|ssn|pin|credit card|bank account|gift card|recovery code|seed phrase|wallet|otp|verification code)?|(?:password|credentials|ssn|pin|credit card)\s[\w\s]*(?:required|needed|enter|confirm|verify|expired)/i
+const informationalCredentialCue = /password.*(?:changed|updated|reset.*complete|successful)|login.*(?:successful|detected)|signed in from|new sign-in|credentials.*verified|code.*sent|we sent you/i
+const urgencyCue = /immediately|urgent|final notice|act now|right now|within 24 hours|within 48 hours|locked|suspended|expires|disabled|permanently disabled/i
+const suspiciousUrlCue = /(?:bit\.ly|tinyurl|is\.gd|\b[a-z0-9]+-(?:alert|login|secure|verify|update|auth|cancel|support|security|wallet|account|delivery|track|help|invoice|payment|portal)\b|\b(?:alert|login|secure|verify|update|auth|cancel|support|security|wallet|account|delivery|track|help|invoice|payment|portal)-[a-z0-9]+\b|\.(?:xyz|top|club|icu|buzz|tk|ml|ga|cf|gq|work|click|link|info|help))/i
 // Brands that appear inside legitimate domains should not count
-const brandInSafeDomainPattern = /(?:support|help|docs|mail|calendar|drive)\.(?:google|apple|microsoft)\.com|(?:amazon|paypal|netflix|chase)\.com(?:\/|$|\?)/i
+const brandInSafeDomainPattern = /(?:support|help|docs|mail|calendar|drive)\.(?:google|apple|microsoft|github)\.com|(?:amazon|paypal|netflix|chase|instructure|powerschool)\.com(?:\/|$|\?)/i
 
 export function brandImpersonationDetector(context: DetectorContext): DetectorResult {
   const { lower, urlMatches } = context
-  const matches = KNOWN_BRANDS.filter((brand) => lower.includes(brand))
+  const dehomo = dehomoglyph(lower)
+  const matches = KNOWN_BRANDS.filter((brand) => lower.includes(brand) || dehomo.includes(brand))
 
   if (!matches.length) {
     return { detector: 'Brand Impersonation', score: 0, confidence: 0, evidence: [] }
@@ -30,9 +32,9 @@ export function brandImpersonationDetector(context: DetectorContext): DetectorRe
     return { detector: 'Brand Impersonation', score: 0, confidence: 0, evidence: [] }
   }
 
-  const hasSuspiciousUrl = urlMatches.some((url) => suspiciousUrlCue.test(url))
-  const hasCredentialRequest = credentialRequestCue.test(lower)
-  const hasUrgency = urgencyCue.test(lower)
+  const hasSuspiciousUrl = urlMatches.some((url) => suspiciousUrlCue.test(url) || suspiciousUrlCue.test(dehomoglyph(url)))
+  const hasCredentialRequest = credentialRequestCue.test(lower) || credentialRequestCue.test(dehomo)
+  const hasUrgency = urgencyCue.test(lower) || urgencyCue.test(dehomo)
   const brandList = matches.join(', ')
 
   // Brand mention alone is NOT impersonation — many legitimate messages reference brands

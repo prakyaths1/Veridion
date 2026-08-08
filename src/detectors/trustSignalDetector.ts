@@ -1,21 +1,21 @@
 import type { DetectorContext, DetectorResult } from '../types.ts'
 
 // Workplace / professional context
-const workplacePattern = /team update|agenda|meeting|calendar|reminder|standup|sprint|quarterly|review|project update|status update|sync|check-in|follow-up|as discussed|per our conversation|office|boardroom|conference/i
+const workplacePattern = /\b(?:team update|agenda|standup|sprint|quarterly|status update|as discussed|per our conversation|boardroom|conference)\b/i
 
 // Shipping / transactional context
-const transactionalPattern = /package has shipped|has been shipped|order details|order confirmed|tracking info|tracking number|out for delivery|delivery scheduled|estimated delivery|shipped and is scheduled|order summary|receipt|invoice.*attached|shipment confirmation/i
+const transactionalPattern = /\b(?:package has shipped|has been shipped|order details|order confirmed|tracking info|out for delivery|delivery scheduled|estimated delivery|shipped and is scheduled|order summary)\b/i
 
-// Educational context
-const educationalPattern = /class|school|homework|assignment|teacher|professor|lecture|semester|grade|syllabus|campus|library|textbook|student|exam|quiz.*due|study group/i
+// Educational context with strict word boundaries
+const educationalPattern = /\b(?:class|school|homework|assignment|teacher|professor|lecture|semester|grade|syllabus|campus|library|textbook|student|exam|quiz)\b/i
 
 // Personal / social context
-const personalPattern = /pick you up|dinner tonight|happy birthday|see you later|on my way|running late|good morning|good night|love you|miss you|how are you|call me when|let me know when|see you at/i
+const personalPattern = /\b(?:pick you up|dinner tonight|happy birthday|see you later|on my way|running late|good morning|good night|love you|miss you|how are you|call me when|let me know when)\b/i
 
 // Health / appointment context
-const healthPattern = /appointment.*(?:confirmed|scheduled|reminder)|dr\.|doctor|dentist|pharmacy|prescription|checkup|check-up|follow-up.*appointment|lab results|test results/i
+const healthPattern = /\b(?:dr\.|doctor|dentist|pharmacy|prescription|checkup|check-up|lab results|test results)\b/i
 
-const credentialAskOverride = /(?:enter|confirm|verify|provide|submit|authenticate|scan)[\s\w]*(?:password|credentials|code|otp|qr|seed phrase|login)|scan (?:the|this|below)?\s*qr|don't call|do not call|cannot talk on phone|cashier['\s]?check|buy.*equipment|home office equipment/i
+const credentialAskOverride = /(?:enter|confirm|verify|provide|submit|authenticate|scan)[\s\w]*(?:password|credentials|code|otp|qr|seed phrase|login|direct deposit|payroll|information)|scan (?:the|this|below)?\s*qr|don't call|do not call|cannot talk on phone|gift card|gift cards|steam|apple|itunes|call.*1-800|call.*customer service|dispute.*transaction|http/i
 
 export function trustSignalDetector(context: DetectorContext): DetectorResult {
   const { lower } = context

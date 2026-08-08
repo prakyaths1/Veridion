@@ -78,9 +78,23 @@ function AppShell({
 }
 
 function App() {
-  // Session-scoped scan data (resets on page refresh / new session)
-  const [investigations, setInvestigations] = useState<InvestigationReport[]>([])
-  const [currentReport, setCurrentReport] = useState<InvestigationReport | null>(null)
+  const [investigations, setInvestigations] = useState<InvestigationReport[]>(() => {
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEYS.investigations)
+      return raw ? JSON.parse(raw) : []
+    } catch {
+      return []
+    }
+  })
+
+  const [currentReport, setCurrentReport] = useState<InvestigationReport | null>(() => {
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEYS.currentReport)
+      return raw ? JSON.parse(raw) : null
+    } catch {
+      return null
+    }
+  })
 
   // Persistent educational state (persists across sessions in localStorage)
   const [progress, setProgress] = usePersistentState<ProgressState>(STORAGE_KEYS.progress, {

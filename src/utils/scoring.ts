@@ -13,12 +13,29 @@ import { rewardDetector } from '../detectors/rewardDetector.ts'
 import { languageQualityDetector } from '../detectors/languageQualityDetector.ts'
 import { trustSignalDetector } from '../detectors/trustSignalDetector.ts'
 import { authorityDetector } from '../detectors/authorityDetector.ts'
+import { headerImpersonationDetector } from '../detectors/headerImpersonationDetector.ts'
+import { documentLureDetector } from '../detectors/documentLureDetector.ts'
+import { financialAssetDetector } from '../detectors/financialAssetDetector.ts'
+import { buildDetectorContext } from './adapters.ts'
 import { RISK_BANDS } from '../constants/risk.ts'
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value))
 }
 
+function simpleHash(str: string): string {
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i)
+    hash = (hash << 5) - hash + char
+    hash |= 0
+  }
+  return Math.abs(hash).toString(36)
+}
+
+/**
+ * Strict, single source of truth mapping score -> RiskLevel
+ */
 function classifyRisk(score: number): RiskLevel {
   for (let index = RISK_BANDS.length - 1; index >= 0; index -= 1) {
     if (score >= RISK_BANDS[index].min) {
@@ -26,12 +43,6 @@ function classifyRisk(score: number): RiskLevel {
     }
   }
   return 'Very Low'
-}
-
-function getUrlMatches(text: string) {
-  const matches = Array.from(text.matchAll(/https?:\/\/[^\s]+|www\.[^\s]+/gi), (match) => match[0])
-  const domains = Array.from(text.matchAll(/(?:^|\s)([a-z0-9-]+(?:\.[a-z0-9-]+)+\.[a-z]{2,}(?:\/[^\s]*)?)/gi), (match) => match[1])
-  return [...matches, ...domains]
 }
 
 function summarizeRisk(score: number, riskLevel: RiskLevel) {
@@ -56,9 +67,6 @@ function summarizeRisk(score: number, riskLevel: RiskLevel) {
 
 /**
  * Confidence calibration based on evidence agreement and strength.
- *
- * Key principle: confidence reflects HOW CERTAIN the engine is about its verdict,
- * not how dangerous the message is. Mixed signals should reduce confidence.
  */
 function calculateConfidence(
   detectorResults: DetectorResult[],
@@ -89,7 +97,6 @@ function calculateConfidence(
   if (hasMixedSignals) {
     // Mixed signals → confidence should be notably lower
     const signalRatio = Math.abs(totalPositiveScore) / Math.max(Math.abs(totalPositiveScore) + Math.abs(totalNegativeScore), 1)
-    // The more balanced the signals, the less confident we should be
     const balancePenalty = signalRatio > 0.3 && signalRatio < 0.7 ? 12 : 6
     confidence = 85 - balancePenalty
   } else if (positiveDetectorCount >= 3) {
@@ -98,7 +105,6 @@ function calculateConfidence(
   } else if (positiveDetectorCount === 2) {
     confidence = 87
   } else if (positiveDetectorCount === 1) {
-    // Only one detector fired → moderate confidence
     confidence = 80
   } else {
     // Only trust signals fired → confident it's benign
@@ -112,9 +118,6 @@ function calculateConfidence(
   return clamp(confidence, 65, 97)
 }
 
-/**
- * Generate a dynamic explanation based on what actually triggered.
- */
 function generateExplanation(
   riskLevel: RiskLevel,
   isInsufficientInfo: boolean,
@@ -152,9 +155,6 @@ function generateExplanation(
   return `Veridion flagged ${firedPositive.length} scam-aligned indicator${firedPositive.length > 1 ? 's' : ''}: ${scamNames}. The ${riskLevel.toLowerCase()} risk assessment (${score}%) is based on the strength and combination of these signals. Verify the sender's identity through an official channel before responding.`
 }
 
-/**
- * Generate contextual alternative explanations based on what detectors fired.
- */
 function generateAlternatives(firedPositive: DetectorResult[], isInsufficientInfo: boolean): string[] {
   if (isInsufficientInfo) {
     return ['The message is too short to justify a meaningful scam conclusion.']
@@ -186,9 +186,6 @@ function generateAlternatives(firedPositive: DetectorResult[], isInsufficientInf
   return alternatives.slice(0, 3)
 }
 
-/**
- * Generate specific missing information items based on context.
- */
 function generateMissingInfo(firedPositive: DetectorResult[], isInsufficientInfo: boolean, sourceType: SourceType): string[] {
   if (isInsufficientInfo) {
     return ['The message does not contain enough indicators to perform a meaningful scam analysis.']
@@ -222,9 +219,6 @@ function generateMissingInfo(firedPositive: DetectorResult[], isInsufficientInfo
   return items.slice(0, 3)
 }
 
-/**
- * Deduplicate evidence strings to avoid repetition in the report.
- */
 function deduplicateEvidence(evidenceStrings: string[]): string[] {
   const seen = new Set<string>()
   const result: string[] = []
@@ -238,19 +232,8 @@ function deduplicateEvidence(evidenceStrings: string[]): string[] {
   return result
 }
 
-export function buildDemoReport(input: string, sourceType: SourceType, uploadedFile?: string, onlineSignals?: Array<{ source: string; available: boolean; summary: string }>): InvestigationReport {
-  const lower = input.toLowerCase().trim()
-  const urlMatches = getUrlMatches(lower)
-  const wordCount = input.trim().split(/\s+/).filter(Boolean).length
-  const isVeryShort = wordCount <= 2
-  const context: DetectorContext = {
-    input,
-    lower,
-    sourceType,
-    urlMatches,
-    wordCount,
-    isVeryShort,
-  }
+export function buildDemoReport(input: string, sourceType: SourceType, uploadedFile?: string): InvestigationReport {
+  const context = buildDetectorContext(input, sourceType)
 
   const detectorResults = [
     brandImpersonationDetector(context),
@@ -267,6 +250,9 @@ export function buildDemoReport(input: string, sourceType: SourceType, uploadedF
     languageQualityDetector(context),
     trustSignalDetector(context),
     authorityDetector(context),
+    headerImpersonationDetector(context),
+    documentLureDetector(context),
+    financialAssetDetector(context),
   ]
 
   const firedPositive = detectorResults.filter((item) => item.score > 0)
@@ -281,6 +267,8 @@ export function buildDemoReport(input: string, sourceType: SourceType, uploadedF
     adjustedPositiveScore += i < 3 ? sortedPositive[i].score : Math.round(sortedPositive[i].score * 0.6)
   }
 
+  const isVeryShort = context.isVeryShort
+  const urlMatches = context.urlMatches
   const totalEvidence = detectorResults.flatMap((item) => item.evidence)
   const isInsufficientInfo = isVeryShort && !totalEvidence.length && !urlMatches.length
 
@@ -321,16 +309,22 @@ export function buildDemoReport(input: string, sourceType: SourceType, uploadedF
     })
   }
 
-  if (onlineSignals?.length) {
-    evidence.push({
-      label: 'Online intelligence',
-      detail: `Connected intelligence services reported ${onlineSignals.filter((signal) => signal.available).length} providers as available and ${onlineSignals.filter((signal) => !signal.available).length} as unavailable in this local demo build.`,
-      weight: 5,
-      source: 'online-intelligence',
-    })
-  }
-
   const confidence = calculateConfidence(detectorResults, context, firedPositive.length, firedNegative.length, totalPositiveScore, totalNegativeScore)
+
+  const hasHighThreatDetector = detectorResults.some(
+    (item) => item.score >= 25 && (item.detector === 'Credential Request Detector' || item.detector === 'Financial Request Detector' || item.detector === 'Financial Asset Detector' || item.detector === 'URL Detector' || item.detector === 'Brand Impersonation'),
+  )
+
+  // Severity represents the POTENTIAL IMPACT level of the threat (Informational | Low | Medium | High | Critical)
+  const severity = score >= 70
+    ? 'Critical'
+    : score >= 45 || (score >= 30 && hasHighThreatDetector)
+      ? 'High'
+      : score >= 25
+        ? 'Medium'
+        : score >= 15
+          ? 'Low'
+          : 'Informational'
 
   const summary = isInsufficientInfo
     ? 'Overall Assessment: Insufficient Information.'
@@ -367,16 +361,17 @@ export function buildDemoReport(input: string, sourceType: SourceType, uploadedF
   const riskDescription = summarizeRisk(score, riskLevel)
 
   return {
-    id: `investigation-${Date.now()}`,
+    id: `investigation-${simpleHash(input + sourceType)}`,
     title: sourceType === 'url' ? 'Link-based review' : `${sourceType.toUpperCase()} review`,
     sourceType,
     summary: `${summary} ${riskDescription}`,
     explanation,
     riskLevel,
+    severity,
     trustScore: Math.round(clamp(100 - score, 0, 100)),
     scamProbability,
     analysisConfidence: confidence,
-    threatLevel: riskLevel === 'Critical' ? 'Immediate caution' : riskLevel === 'High' ? 'Elevated attention' : 'Contained risk',
+    threatLevel: riskLevel === 'Critical' ? 'Immediate caution' : riskLevel === 'High' ? 'Elevated attention' : riskLevel === 'Moderate' ? 'Moderate scrutiny' : riskLevel === 'Low' ? 'Standard caution' : 'Routine / Low risk',
     trustSignals: trustSignals.slice(0, 5),
     redFlags: redFlags.slice(0, 5),
     evidence,
